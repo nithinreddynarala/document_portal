@@ -1,5 +1,9 @@
 name: CI/CD to ECS Fargate
-
+on:
+  workflow_run:
+    workflows: ["Run Unit Tests"]   # Match the name in your ci.yaml
+    types:
+      - completed
 env:
   AWS_REGION: ap-southeast-2
   ECR_REPOSITORY: documentportalliveclass
