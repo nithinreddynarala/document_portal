@@ -1,14 +1,14 @@
 {
   "family": "documentportaltd",
   "networkMode": "awsvpc",
-  "executionRoleArn": "arn:aws:iam::992382587119:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::471112576461:role/ecsTaskExecutionRole",
   "requiresCompatibilities": ["FARGATE"],
-  "cpu": "1024",
-  "memory": "8192",
+  "cpu": "256",
+  "memory": "512",
   "containerDefinitions": [
     {
       "name": "document-portal-container",
-      "image": "992382587119.dkr.ecr.us-east-1.amazonaws.com/documentportalliveclass",
+      "image": "471112576461.dkr.ecr.us-east-1.amazonaws.com/documentportalliveclass",
       "cpu": 1024,
       "essential": true,
       "portMappings": [
@@ -29,7 +29,7 @@
       "secrets": [
         {
           "name": "API_KEYS",
-          "valueFrom": "arn:aws:secretsmanager:us-east-1:992382587119:secret:apikeyliveclass-7JWbVw"
+          "valueFrom": "arn:aws:secretsmanager:us-east-1:471112576461:secret:apikeyliveclass-ywr1pD"
         }
         
       ],

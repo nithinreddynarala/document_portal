@@ -4,6 +4,7 @@ import json
 from dotenv import load_dotenv
 from utils.config_loader import load_config
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 from logger import GLOBAL_LOGGER as log
 from exception.custom_exception import DocumentPortalException
@@ -73,8 +74,7 @@ class ModelLoader:
         try:
             model_name = self.config["embedding_model"]["model_name"]
             log.info("Loading embedding model", model=model_name)
-            return GoogleGenerativeAIEmbeddings(model=model_name,
-                                                google_api_key=self.api_key_mgr.get("GOOGLE_API_KEY")) #type: ignore
+            return HuggingFaceEmbeddings(model_name=model_name, model_kwargs={"device": "cpu"},encode_kwargs={"normalize_embeddings": True})
         except Exception as e:
             log.error("Error loading embedding model", error=str(e))
             raise DocumentPortalException("Failed to load embedding model", sys)

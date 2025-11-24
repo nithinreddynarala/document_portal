@@ -3,8 +3,8 @@ faiss_db:
 
 
 embedding_model:
-  provider: "google"
-  model_name: "models/text-embedding-004"
+  provider: "huggingface"
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
 
 retriever:
   top_k: 10
