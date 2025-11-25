@@ -13,8 +13,8 @@
       "essential": true,
       "portMappings": [
         {
-          "containerPort": 8050,
-          "hostPort": 8050,
+          "containerPort": 8052,
+          "hostPort": 8052,
           "protocol": "tcp",
           "name": "document-portal-container-8080-tcp",
           "appProtocol": "http"
