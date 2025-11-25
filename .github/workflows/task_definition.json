@@ -1,10 +1,10 @@
 {
   "family": "documentportaltd",
   "networkMode": "awsvpc",
-  "executionRoleArn": "arn:aws:iam::171158266231:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::459497895986:role/ecsTaskExecutionRole",
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "512",
-  "memory": "1024",
+  "memory": "1924",
   "containerDefinitions": [
     {
       "name": "document-portal-container",
@@ -16,7 +16,7 @@
           "containerPort": 8052,
           "hostPort": 8052,
           "protocol": "tcp",
-          "name": "document-portal-container-8080-tcp",
+          "name": "document-portal-container-8052-tcp",
           "appProtocol": "http"
         }
       ],
