@@ -5,7 +5,10 @@ faiss_db:
 embedding_model:
   provider: "huggingface"
   model_name: "sentence-transformers/all-MiniLM-L6-v2"
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc06a200743d609a7b45bc43c03b5c4870ddd6e6
 
 retriever:
   top_k: 10
