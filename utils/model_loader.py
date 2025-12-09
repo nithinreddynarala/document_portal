@@ -72,7 +72,6 @@ class ModelLoader:
         """load and return the embeddings model"""
 
         try:
-<<<<<<< HEAD
             log.info("Loading Embeddings model")
             model_name=self.config['embedding_model']['model_name']
             return HuggingFaceEmbeddings(
@@ -80,11 +79,6 @@ class ModelLoader:
             model_kwargs={"device": "cpu"},          # "cuda" if GPU
             encode_kwargs={"normalize_embeddings": True}
         )
-=======
-            model_name = self.config["embedding_model"]["model_name"]
-            log.info("Loading embedding model", model=model_name)
-            return HuggingFaceEmbeddings(model_name=model_name, model_kwargs={"device": "cpu"},encode_kwargs={"normalize_embeddings": True})
->>>>>>> cc06a200743d609a7b45bc43c03b5c4870ddd6e6
         except Exception as e:
             raise DocumentPortalException("Failed to load embeddings model",sys)
 
